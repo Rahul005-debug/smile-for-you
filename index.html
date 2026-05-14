@@ -5,6 +5,21 @@
   <title>Smile for me 💻❤️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Adding a small bit of CSS here to make sure the "hidden" class works */
+    .hidden {
+      display: none;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #ff4d6d;
+      animation: fadeIn 1s;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
   <div class="hearts"></div>
@@ -18,13 +33,25 @@
 
     <button id="btn">Click me 😊</button>
 
+    <!-- This is the part that was missing/cut off -->
     <p id="secret" class="hidden">
-      Error 404: Sadness not found.<br>
-      System status: <span class="ok">You are loved, valued, and never alone.</span><br>
-      From one CS nerd to my favorite girl: <strong>I’m always with you.</strong> 💖
+      You've got this! Don't let one bad day define you. You're doing great! ✨
     </p>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // 1. Find the button and the secret message in the document
+    const button = document.getElementById('btn');
+    const secretMessage = document.getElementById('secret');
+
+    // 2. Tell the button to wait for a click
+    button.addEventListener('click', function() {
+      // 3. Remove the 'hidden' class so the message appears
+      secretMessage.classList.toggle('hidden');
+      
+      // Optional: Change the button text after clicking
+      button.innerText = "Stay strong! 💪";
+    });
+  </script>
 </body>
 </html>
